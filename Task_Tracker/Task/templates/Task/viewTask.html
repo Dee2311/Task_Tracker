@@ -1,0 +1,47 @@
+<section class="header">
+    <h2 class="title">Task View</h2>
+    <!-- <form action="http://127.0.0.1:8000/Task/addTask" method="GET"> -->
+
+
+    <body>
+        <div id="main">
+
+            {% for task in tasks%}
+            <div class="card">
+
+                <p>Task Name : {{ task.title}}</p>
+                <hr>
+                <P>Task Description : {{task.description }}</P>
+                <div class="left">
+                Expected_time : {{task.expected_time}}
+                </div><vr>
+                <div class="right">
+                Due_date : {{task.due_date}}
+                </div>
+                <hr>
+                <p>
+                Status : {{task.status}}
+                </p>
+            </div>
+            <br> {% endfor %}
+        </div>
+
+    </body>
+    <!-- </form> -->
+</section>
+<style>
+    #main {
+        width: 100%;
+        height: 100%;
+        /* background-color: black; */
+    }
+    
+    .card {
+        width: 400px;
+        height: 200px;
+        padding: auto;
+        /* margin: auto; */
+        border: 1px solid red;
+        background-color: aliceblue;
+    }
+</style>

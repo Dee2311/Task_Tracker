@@ -1,0 +1,12 @@
+<section>
+    <div>
+        <p>Login : </p>
+        <form method=post>
+            {% csrf_token %}
+            <div>
+                {{ form }}
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</section>

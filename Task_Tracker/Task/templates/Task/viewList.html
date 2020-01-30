@@ -1,0 +1,29 @@
+<section class="header">
+    <h2 class="title">View List</h2>
+    <form action="http://127.0.0.1:8000/Task/addList/" method="GET">
+
+        <body>
+            {% csrf_token %}
+            <ul>
+                {% for list in lists%}
+                <li class="card">
+                    <a href="http://127.0.0.1:8000/Task/addTask/">
+                         List Name : {{ list.listName}} </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <input type="submit" value="new List">
+        </body>
+    </form>
+</section>
+<style>
+.card{
+    width: 500px;
+    height: 40px;
+    /* border: 1px solid black; */
+    padding: 5px 0 0px 0px;
+    /* display: none; */
+    cursor: pointer;
+}
+</style>

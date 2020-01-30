@@ -1,0 +1,16 @@
+<section class="header">
+    <h2 class="title">Add List</h2>
+    <div class="row">
+        <div class="three columns value-prop"></div>
+        <div class="six columns">
+            <form method="POST">
+                {% csrf_token %}
+                <p> {{ add }}</p>
+
+
+                <input type="submit" class="button button-primary" value="New List">
+                </dl>
+            </form>
+        </div>
+    </div>
+</section>
