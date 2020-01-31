@@ -3,8 +3,11 @@
     <h1>Lists</h1>
 
     <ul>
-      <li v-for="lists in list" :key="lists.name">
-        <i class="fas fa-list">{{ lists.listName }}</i>
+      <li v-for="list in lists" :key="list.name">
+        <router-link to="/Task">
+       <i class="fas fa-list">{{ list.listName }}</i>
+       </router-link>
+        
       </li>
     </ul>
 
@@ -16,29 +19,37 @@
 // @ is an alias to /src
 // import Postcard from "@/components/Postcard.vue";
 
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "list",
-
-  data() {
+data () {
     return {
-      list: null
-    };
-  },
+      lists:[
+        {"id": 1, "listName": "Structure"},
+       {"id": 2, "listName": "deepak "},
+       {"id": 3, "listName": "Product"}, 
+       {"id": 4, "listName": "Finally"}, 
+       {"id": 5, "listName": "Project"}, 
+       {"id": 6, "listName": "rest"}, 
+       {"id": 7, "listName": "today"}
+       ]
+    }
+},
+
   methods: {
-    mounted () {
-      {
-        axios.get("http://127.0.0.1:8000/Task/api/list").then(response => {
-          this.list = response;
-          console.log(this.list, "getting data from api");
-          this.$router.push("/addList");
-        })
-        .catch(error => {
-        console.log(error)
-      })
-      }
-    },
+    // mounted () 
+    //   {
+    //     axios.get("http://127.0.0.1:8000/Task/api/list").then(response => {
+    //       this.list = response;
+    //       console.log(this.list, "getting data from api");
+    //       this.$router.push("/addList");
+    //     })
+    //     .catch(error => {
+    //     console.log(error)
+    //   })
+    //   }
+    // }
     add(){
       this.$router.push('addlist')
     }

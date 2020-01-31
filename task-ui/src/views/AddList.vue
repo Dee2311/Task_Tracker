@@ -4,13 +4,14 @@
   <input
       type="text"
       placeholder="Enter list title"
-      v-model="list"
+     
     /><br /> 
     <button @click="addList()">+ Create List</button>
 </div>
 </template>
 <script>
 import axios from 'axios';
+
 export default {
   name: 'list',
   data() {
@@ -30,11 +31,15 @@ export default {
           },
         })
         .then((response) => {
+          alert(response);
+
            this.$router.push('list')
           
         })
         .catch((err) => {
           alert(err);
+           this.$router.push('list')
+
         });
     }
   },
