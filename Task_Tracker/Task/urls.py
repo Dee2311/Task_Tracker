@@ -11,6 +11,5 @@ urlpatterns = [
     path('viewList/',views.viewList, name='viewList'),
     path('api/list',views.list,name='list'),
     path('api/task',views.task,name='task'),
-
     
 ]
