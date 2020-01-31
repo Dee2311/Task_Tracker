@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-     <HelloWorld msg="Welcome to Your Task Tracker App" />
-    <div class="bg">
-      <button class="start">Let's Start</button>
-    </div>
-   
+     <HelloWorld msg="Welcome to Your Task Track App" />
+    <div class="wrapper">
+  
+    <button class="button" @click="start()">Let's Start</button>
+
+</div>
   </div>
 </template>
 
@@ -13,29 +14,25 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "home",
+  name: "login",
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    start(){
+    this.$router.push('login')
+    }
+  },
 };
 </script>
 <style scoped>
-body, html {
-  height: 100%;
-  margin: 0;
+.wrapper {
+    text-align: center;
 }
 
-.bg {
-  /* The image used */
-  background-image: url("../assets/bg.jpg");
-
-  /* Full height */
-  height: 100%; 
-  width: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.button {
+    position: absolute;
+    top: 50%;
+    height: 30px;
 }
 </style>

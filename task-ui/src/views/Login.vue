@@ -1,10 +1,8 @@
 
 <template id="login-form">
-  <div class="login-wrapper">
-    <div class="login-left">
-      <img height="100" src="https://wisk.s3.amazonaws.com/assets/vms/images/wisk-logo-black.png" srcr="https://preview.ibb.co/hUAr57/bar_bg.jpg">
-    </div>
-    <form class="login-right" @submit.prevent>
+  <div class="login-wr">
+
+    <form class="login" @submit.prevent>
       <div class="h2">Login</div>
       <div class="form-group">
         <input type="text" id="username" placeholder="Username" v-model="username">
@@ -58,7 +56,7 @@ export default {
       alert(`${this.username} ${this.password} ${this.rememberMe}`);
 
       axios
-        .post('http://api2.wisksolution.com/login', {
+        .post('http://127.0.0.1:8000/api/login/', {
           body: {
             username: this.username,
             password: this.password,
