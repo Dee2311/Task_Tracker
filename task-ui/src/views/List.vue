@@ -1,17 +1,21 @@
 <template>
-  <div class="createpost">
+  <div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <h1>Lists</h1>
 
-    <ul>
-      <li v-for="list in lists" :key="list.name">
+      <div class="listCard" v-for="list in lists" :key="list.name">
+       <div class="main">
         <router-link to="/Task">
-       <i class="fas fa-list">{{ list.listName }}</i>
-       </router-link>
         
-      </li>
-    </ul>
-
-    <button @click="add()">+ New list</button>
+         {{list.listName}}   
+           </router-link>
+       </div>
+      </div>
+ 
+<div>
+    <input type="submit" value="+ Add List" class="new" @click="add()">
+    </div>
   </div>
 </template>
 
@@ -58,18 +62,18 @@ data () {
 </script>
 
 <style>
-.createpost {
-  width: 760px;
-  margin: auto;
+.listCard{
+  width: 10px;
+  /* height: 50px; */
+  /* border:3px solid blue; */
 }
-input {
+.main{
   width: 100%;
-  margin-bottom: 20px;
-  padding: 10px 0;
+  /* background-color: black; */
+  
+  padding: 10px;
+  height: 100%;
 }
-textarea {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 20px;
-}
+
+
 </style>
