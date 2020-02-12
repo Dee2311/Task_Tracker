@@ -18,10 +18,13 @@
          <div class="status">
            {{ task.status }}
          </div>
-       </div>       
-          
-      
- 
+       </div> 
+
+
+       <!-- class binding 
+       style binding
+       jwt Token -->
+
   <div class="right">
     <input type="submit" style="width:100px;"  value="+ Add Task" class="new" @click="add()">
   </div>

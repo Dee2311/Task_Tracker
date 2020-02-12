@@ -24,6 +24,11 @@ SECRET_KEY = '3)f4z8*v96nt+0v^6=$ki)$9jhw*_b15#xa6%%#@bfa!1w2bbo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '../task-ui/dist'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'public')
 
 ALLOWED_HOSTS = []
 
@@ -138,7 +143,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'viewTask'
-
 
 
 CORS_ORIGIN_WHITELIST = 'http://localhost:8080',

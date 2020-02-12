@@ -6,8 +6,9 @@ import List from "../views/List.vue";
 import Task from "../views/Task.vue";
 import AddTask from "../views/AddTask.vue";
 import AddList from "../views/AddList.vue";
+import VueResource from "vue-resource";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter, VueResource);
 
 const routes = [{
         path: "/",

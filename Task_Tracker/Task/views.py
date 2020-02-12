@@ -81,38 +81,6 @@ def  viewTask(request):
     return render(request,'Task/viewTask.html',{'tasks': list_task}) 
 
 # write the api view using REST framework
-
-def list(request):
-    
-    if request.method == 'GET':
-        article = AddList.objects.all()
-        serializer = ListSerializer(article, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = ListSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-    
-
-def task(request):
-    
-    if request.method == 'GET':
-        article = AddTask.objects.all()
-        serializer = TaskSerializer(article, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = TaskSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-
 class ListView(APIView):
     def get(self,request):
         listView = AddList.objects.all()
